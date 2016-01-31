@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Google Visualization</title>
+
+<script type="text/javascript"
+      src='https://www.google.com/jsapi?autoload={
+        "modules":[{
+        "name":"visualization",
+        "version":"1"
+        }]
+      }'></script>
+<script type="text/javascript">
+  google.setOnLoadCallback(drawVisualization);
+
+  function drawVisualization() {
+    var wrap = new google.visualization.ChartWrapper({
+       'chartType':'PieChart',
+       'dataSourceUrl':'https://docs.google.com/spreadsheets/d/17N-mgBhLUfmDlknwImBdulhMobQyP4RORTEfy-RDoEE/edit#gid=928148959',
+       'containerId':'visualization',
+       'query':'SELECT C,count (A)  group by C',
+       'options': {'title':'热门电影产地分析'}
+       });
+	/*var donutRangeSlider = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+		  'dataSourceUrl':'https://docs.google.com/spreadsheets/d/17N-mgBhLUfmDlknwImBdulhMobQyP4RORTEfy-RDoEE/edit#gid=928148959',
+          'containerId': 'filter_div',
+		  'query':'SELECT A,B',
+          'options': {
+            'filterColumnLabel': 'C'
+          }
+        }); 
+	
+     wrap.draw();*/
+	 donutRangeSlider.draw();	
+  }
+</script>
+</head>
+<body>
+  <div id="visualization" style="height: 800px; width: 800px;"></div>
+  
+</body>
+</html>
