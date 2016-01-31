@@ -17,11 +17,11 @@ var listElements = movies
   //.filter(function(contact) { return contact.email; })
  .map(function(movie) {
     return (
-	React.createElement('li', {key: movie.key},
+    React.createElement('li', {key: movie.key},
       React.createElement('h2', {}, movie.name),
       React.createElement('h4', {}, movie.director),
-	  React.createElement('br', {}, movie.country),
-	  React.createElement('br', {}, movie.type)
+      React.createElement('br', {}, movie.country),
+      React.createElement('br', {}, movie.type)
 	 )
     ) 
   })
