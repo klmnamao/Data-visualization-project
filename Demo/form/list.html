@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>豆瓣电影TOP25分析</title>
+<link href="../css/template.css" rel="stylesheet" type="text/css"/>
+<base target="_blank"/>
+<script type="text/javascript"
+      src='https://www.google.com/jsapi?autoload={
+        "modules":[{
+        "name":"visualization",
+        "version":"1"
+        }]
+      }'></script>
+
+<script type="text/javascript">
+
+
+	google.setOnLoadCallback(tablechart);	
+	function tablechart() {
+    var wrap1 = new google.visualization.ChartWrapper({
+       'chartType':'Table',
+       'dataSourceUrl':'https://docs.google.com/spreadsheets/d/17N-mgBhLUfmDlknwImBdulhMobQyP4RORTEfy-RDoEE/edit#gid=928148959',
+	   'containerId':'visualization1',
+       'options': {'width':'200%'}
+       });
+	    wrap1.draw(); 	
+		}
+	
+  
+</script>
+</head>
+<body>
+<div class="g-doc">
+<div class="g-hd">
+
+        <h2 class="m-title">豆瓣电影TOP25分析</h2>
+    </div>
+<div id="visualization1" style="height: 600px; width: 800px;"></div>
+
+<div class="g-ft">
+</div>
+<div class="g-bd">
+        <div class="m-foot">
+        	如有任何问题，请联系：毛骏驰(<a href="mailto:emjunchi@gmail.com">emjunchi@gmail.com</a>)
+        </div>
+    </div>
+<div class="g-ft">
+    </div>
+</div>
+</body>
+</html>
